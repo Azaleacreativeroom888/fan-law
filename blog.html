@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>勉強ログ | 法学ノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#8b008b;
+  --purple-dark:#4d004d;
+  --purple-soft:#f1e3f1;
+  --paper:#fbf8fc;
+  --ink:#2a1f2a;
+  --line:#e6d6e6;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--sans);color:var(--ink);line-height:1.9;
+  background:var(--paper);
+  background-image:repeating-linear-gradient(transparent 0 35px,var(--line) 35px 36px);
+}
+a{color:inherit}
+a:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+
+header{background:var(--purple);color:#fff}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding-top:14px;padding-bottom:14px}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:.08em}
+nav ul{list-style:none;display:flex;gap:22px}
+nav a{text-decoration:none;font-size:.95rem;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-bottom-color:#fff}
+
+main{border-left:3px double var(--purple);margin-left:max(12px,calc((100% - 860px)/2 - 12px))}
+main .wrap{padding-left:28px}
+
+.hero{padding:48px 0 20px}
+.hero h1{font-family:var(--serif);font-size:clamp(2rem,6vw,2.8rem);line-height:1.3;color:var(--purple-dark);letter-spacing:.06em}
+.hero p{margin-top:12px;max-width:34em}
+
+.feed{display:grid;gap:12px;padding:16px 0 20px;max-width:640px}
+.post{background:#fff;border:1px solid var(--line);border-left:5px solid var(--purple);padding:12px 18px}
+.post time{display:block;font-size:.82rem;color:var(--purple);font-weight:500}
+.post p{font-size:.97rem;line-height:1.8}
+
+.pager{display:flex;justify-content:space-between;max-width:640px;padding-bottom:16px;font-size:.92rem}
+.pager a{display:inline-block;background:var(--purple);color:#fff;text-decoration:none;padding:6px 20px}
+.pager a:hover{background:var(--purple-dark)}
+.pager span{display:inline-block;padding:6px 20px;border:1px solid var(--line);color:#a08ca0;background:#fff}
+
+footer{margin-top:40px;background:var(--purple-dark);color:#fff;text-align:center;padding:18px 20px;font-size:.85rem}
+
+@media(max-width:560px){
+  nav ul{gap:14px}
+  main{margin-left:8px}
+  main .wrap{padding-left:16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">法学ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html" aria-current="page">勉強ログ</a></li>
+        <li><a href="column.html">コラム</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="hero">
+    <h1>勉強ログ</h1>
+    <p>毎日の勉強の進み具合を、日付と短い日記で残しています。新しい投稿が上に来ます。</p>
+  </div>
+
+  <div class="feed">
+    <article class="post">
+      <time datetime="2026-10-08">2026.10.08</time>
+      <p>ここに今日の勉強内容を書きます。（サンプル）</p>
+    </article>
+    <article class="post">
+      <time datetime="2026-10-07">2026.10.07</time>
+      <p>日付と日記の文章だけを書いて、下に足していく形です。（サンプル）</p>
+    </article>
+    <article class="post">
+      <time datetime="2026-10-06">2026.10.06</time>
+      <p>科目名や進んだページ、わからなかったところなどを一言メモします。（サンプル）</p>
+    </article>
+    <article class="post">
+      <time datetime="2026-10-05">2026.10.05</time>
+      <p>投稿を増やしたいときは、このブロックをコピーして日付と文章を書き換えてください。（サンプル）</p>
+    </article>
+  </div>
+
+  <nav class="pager" aria-label="ページ送り">
+    <span>新しい投稿</span>
+    <a href="#">古い投稿</a>
+  </nav>
+
+</div>
+</main>
+
+<footer>
+  <p>&copy; 2026 法学ノート</p>
+</footer>
+
+</body>
+</html>
