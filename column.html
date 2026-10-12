@@ -65,6 +65,13 @@ h2{font-family:var(--serif);font-size:1.5rem;color:var(--purple);margin-bottom:6
 .essay h4{font-family:var(--serif);font-size:1rem;color:var(--purple);margin:14px 0 2px}
 .essay p{font-size:.96rem}
 
+/* report link box */
+.report-link{display:block;max-width:680px;background:var(--purple);color:#fff;text-decoration:none;padding:18px 24px;border:3px double #fff;outline:2px solid var(--purple);outline-offset:0}
+.report-link:hover{background:var(--purple-dark);outline-color:var(--purple-dark)}
+.report-link small{display:block;font-size:.8rem;letter-spacing:.2em;opacity:.85}
+.report-link b{display:block;font-family:var(--serif);font-size:1.3rem;line-height:1.5}
+.report-link span{display:block;font-size:.9rem}
+
 footer{margin-top:40px;background:var(--purple-dark);color:#fff;text-align:center;padding:18px 20px;font-size:.85rem}
 
 @media(max-width:560px){
@@ -97,11 +104,12 @@ footer{margin-top:40px;background:var(--purple-dark);color:#fff;text-align:cente
 
   <div class="hero">
     <h1>コラム</h1>
-    <p>勉強の合間に描いた漫画やイラスト、気になった法律の話を書いた小論文を置いています。</p>
+    <p>勉強の合間に描いた漫画やイラスト、気になった法律の話を書いたコラムを置いています。</p>
     <ul class="toc">
       <li><a href="#yonkoma">4コマ漫画</a></li>
       <li><a href="#illust">イラスト</a></li>
-      <li><a href="#essay">小論文</a></li>
+      <li><a href="#essay">コラム</a></li>
+      <li><a href="#report">特集</a></li>
     </ul>
   </div>
 
@@ -140,11 +148,11 @@ footer{margin-top:40px;background:var(--purple-dark);color:#fff;text-align:cente
   </section>
 
   <section id="essay" aria-labelledby="h-ess">
-    <h2 id="h-ess">小論文</h2>
-    <p class="lead">気になった法律のテーマを、短い小論文の形で書いています。</p>
+    <h2 id="h-ess">コラム</h2>
+    <p class="lead">気になった法律のテーマを、短いコラムの形で書いています。</p>
     <article class="essay">
       <p class="date">2026.10.08</p>
-      <h3>ここに小論文のタイトルを入れる（サンプル）</h3>
+      <h3>ここにコラムのタイトルを入れる（サンプル）</h3>
       <h4>はじめに</h4>
       <p>テーマを選んだ理由や、問いを書きます。ここは文章のサンプルです。</p>
       <h4>本論</h4>
@@ -152,6 +160,16 @@ footer{margin-top:40px;background:var(--purple-dark);color:#fff;text-align:cente
       <h4>おわりに</h4>
       <p>結論と、これから考えたいことをまとめます。</p>
     </article>
+  </section>
+
+  <section id="report" aria-labelledby="h-rep">
+    <h2 id="h-rep">特集</h2>
+    <p class="lead">じっくり読みたい人向けの特集ページです。</p>
+    <a class="report-link" href="report1.html">
+      <small>REPORT 01</small>
+      <b>[著作権]</b>
+      <span>特集ページを読む ›</span>
+    </a>
   </section>
 
 </div>
