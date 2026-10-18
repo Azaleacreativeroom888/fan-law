@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>[法学用語辞典] 特集 | 法学ノート</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --purple:#8b008b;
+  --purple-dark:#4d004d;
+  --purple-soft:#f1e3f1;
+  --paper:#fbf8fc;
+  --ink:#2a1f2a;
+  --line:#e6d6e6;
+  --serif:"Shippori Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --sans:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  font-family:var(--sans);color:var(--ink);line-height:1.9;
+  background:var(--paper);
+  background-image:repeating-linear-gradient(transparent 0 35px,var(--line) 35px 36px);
+}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid var(--purple);outline-offset:3px}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+
+header{background:var(--purple);color:#fff}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px;padding-top:14px;padding-bottom:14px}
+.logo{font-family:var(--serif);font-weight:700;font-size:1.25rem;text-decoration:none;letter-spacing:.08em}
+nav ul{list-style:none;display:flex;gap:22px}
+nav a{text-decoration:none;font-size:.95rem;padding:4px 0;border-bottom:2px solid transparent}
+nav a:hover,nav a[aria-current]{border-bottom-color:#fff}
+
+main{border-left:3px double var(--purple);margin-left:max(12px,calc((100% - 860px)/2 - 12px))}
+main .wrap{padding-left:28px}
+
+.hero{padding:48px 0 16px}
+.hero small{display:block;font-size:.85rem;letter-spacing:.2em;color:var(--purple)}
+.hero h1{font-family:var(--serif);font-size:clamp(2rem,7vw,3.2rem);line-height:1.3;color:var(--purple-dark);letter-spacing:.06em}
+.hero p{margin-top:12px;max-width:36em}
+
+/* genre filter */
+.filter{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0 14px}
+.filter button{font:inherit;font-size:.88rem;background:#fff;color:var(--purple);border:1px solid var(--purple);padding:2px 16px;cursor:pointer}
+.filter button:hover{background:var(--purple-soft)}
+.filter button[aria-pressed="true"]{background:var(--purple);color:#fff}
+.count{font-size:.85rem;color:var(--purple);margin-bottom:8px}
+
+/* dictionary table */
+.scroll{overflow-x:auto;margin-bottom:14px}
+table{width:100%;min-width:520px;border-collapse:collapse;background:#fff;border:1px solid var(--purple)}
+th,td{padding:10px 14px;text-align:left;border-bottom:1px solid var(--line);font-size:.93rem;line-height:1.7;vertical-align:top}
+thead th{background:var(--purple);color:#fff;font-family:var(--serif);white-space:nowrap}
+tbody th{width:8em;font-family:var(--serif);color:var(--purple-dark);background:var(--purple-soft)}
+td.genre{width:9em;white-space:nowrap;color:var(--purple);font-weight:500}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:0}
+
+.memo{font-size:.85rem;border:1px dashed var(--purple);padding:12px 18px;background:#fff;max-width:680px;margin:20px 0}
+.back{margin:20px 0 0}
+.back a{display:inline-block;background:var(--purple);color:#fff;text-decoration:none;padding:6px 20px;font-size:.92rem}
+.back a:hover{background:var(--purple-dark)}
+
+footer{margin-top:40px;background:var(--purple-dark);color:#fff;text-align:center;padding:18px 20px;font-size:.85rem}
+
+@media(max-width:560px){
+  nav ul{gap:14px}
+  main{margin-left:8px}
+  main .wrap{padding-left:16px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a class="logo" href="index.html">法学ノート</a>
+    <nav aria-label="メインメニュー">
+      <ul>
+        <li><a href="index.html">ホーム</a></li>
+        <li><a href="blog.html">勉強ログ</a></li>
+        <li><a href="column.html" aria-current="page">コラム</a></li>
+        <li><a href="about.html">このサイトについて</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+  <div class="hero">
+    <small>REPORT 02</small>
+    <h1>[法学用語辞典]</h1>
+    <p>勉強中に覚えた法学の用語を、自分のことばでまとめていく辞典です。単語は少しずつ増えていきます。</p>
+  </div>
+
+  <div class="filter" id="filter" aria-label="ジャンルで絞りこみ"></div>
+  <p class="count" id="count" aria-live="polite"></p>
+
+  <div class="scroll">
+    <table>
+      <thead>
+        <tr><th scope="col">用語</th><th scope="col">解説</th><th scope="col">法律のジャンル</th></tr>
+      </thead>
+      <tbody id="dict">
+        <!-- 単語を足すときは、下の1行をコピーして書き換えてください -->
+        <tr><th scope="row">善意・悪意</th><td>ある事実を知らないことを「善意」、知っていることを「悪意」という。良い・悪いの意味ではない。</td><td class="genre">民法</td></tr>
+        <tr><th scope="row">故意</th><td>罪にあたる事実を認識しながら、あえてその行為をしようとする意思。</td><td class="genre">刑法</td></tr>
+        <tr><th scope="row">過失</th><td>注意すべき義務を怠ったこと。うっかりしていた場合などが当てはまる。</td><td class="genre">民法・刑法</td></tr>
+        <tr><th scope="row">時効</th><td>一定の期間が過ぎたことで、権利を得たり失ったりする制度。</td><td class="genre">民法</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p class="memo">※ 自分の学習用にまとめたメモです。正確な意味や条文は、教科書や六法で確認してください。</p>
+
+  <p class="back"><a href="column.html">‹ コラムにもどる</a></p>
+
+</div>
+</main>
+
+<footer>
+  <p>&copy; 2026 法学ノート</p>
+</footer>
+
+<script>
+(function(){
+  var rows = Array.prototype.slice.call(document.querySelectorAll('#dict tr'));
+  var box = document.getElementById('filter');
+  var count = document.getElementById('count');
+  var genres = [];
+  rows.forEach(function(r){
+    r.querySelector('.genre').textContent.split('・').forEach(function(g){
+      g = g.trim();
+      if (g && genres.indexOf(g) === -1) genres.push(g);
+    });
+  });
+  function show(g){
+    var n = 0;
+    rows.forEach(function(r){
+      var list = r.querySelector('.genre').textContent.split('・').map(function(x){return x.trim();});
+      var ok = (g === 'すべて') || list.indexOf(g) !== -1;
+      r.hidden = !ok;
+      if (ok) n++;
+    });
+    count.textContent = n + '語';
+    Array.prototype.forEach.call(box.children, function(b){
+      b.setAttribute('aria-pressed', b.textContent === g ? 'true' : 'false');
+    });
+  }
+  ['すべて'].concat(genres).forEach(function(g){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.textContent = g;
+    b.addEventListener('click', function(){ show(g); });
+    box.appendChild(b);
+  });
+  show('すべて');
+})();
+</script>
+
+</body>
+</html>
